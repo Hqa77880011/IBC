@@ -1,0 +1,1 @@
+{"seed":13,"probe_seed":37,"classes":100,"rank":32,"probes":64,"stage_budget":0.5,"anchors":200,"memory_mib":512,"epochs":50,"batch_size":64,"learning_rate":0.01,"weight_decay":0.0005,"calibration_steps":5,"refresh_epochs":5,"monitor_steps":20,"progress_target":0.01,"drift_target":0.02,"controller_gain":0.1,"trust_cap":0.05,"variant":"full"}
