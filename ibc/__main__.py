@@ -163,7 +163,8 @@ def train(c, out):
                 elif c['variant'] == 'no-ledger':
                     bound = scale * request
                 accepted = proposal if c['variant'] in ['finetune', 'global-cap'] else project(proposal, basis, bound)
-                accepted *= min(1., c['trust_cap'] * scale / max(float(accepted.norm()), 1e-12))
+                if c['variant'] != 'finetune':
+                    accepted *= min(1., c['trust_cap'] * scale / max(float(accepted.norm()), 1e-12))
                 assign(parameters, before + accepted)
                 expenditure = float((basis.T @ accepted).norm()) / scale
                 if c['variant'] != 'no-ledger':
